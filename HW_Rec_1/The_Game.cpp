@@ -10,7 +10,7 @@ const int ROWS = 11;
 const int COLS = 35;
 
 void FillRand(char arr[ROWS][COLS], const int ROWS, const int COLS); // рисуем и заполняем поле
-void Print(char arr[ROWS][COLS], const int ROWS, const int COLS); // выводим текущее состояния поля на экран
+void Print(char arr[ROWS][COLS], const int ROWS, const int COLS); // выводим текущее состояния поля на экран + check (на занятые клетки и ошибочный ввод (не Х и не 0))
 void Move(char arr[ROWS][COLS], const int ROWS, const int COLS, char player); // ход игрока
 void CheckWin(char arr[ROWS][COLS], const int ROWS, const int COLS, char player); // проверка на победу
 
@@ -29,7 +29,7 @@ void main()
 		
 	for (int i = 0; i < 10; i++)
 	{
-		if (i == 9)
+		if (i == 9) // когда ходы закончились, а победы нет
 		{
 			cout << endl;
 			cout << "Ничья! Победила дружба!" << endl << endl;
@@ -37,11 +37,11 @@ void main()
 			_getch(); main();
 		}
 		cout << endl;
-		cout << "Ход игрока: " << player;
+		cout << "Ход игрока: " << player; // чтоб не перепутать
 		cout << endl;
 		Move(arr, ROWS, COLS, player);
 		CheckWin(arr, ROWS, COLS, player);
-		if (player == 'X') player = '0';
+		if (player == 'X') player = '0'; // реализация передачи хода
 		else if (player == '0') player = 'X';
 	}
 }
