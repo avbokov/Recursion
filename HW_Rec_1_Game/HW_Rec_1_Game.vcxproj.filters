@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\HW_Rec_1\The_Game.cpp">
+    <ClCompile Include="The_Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
